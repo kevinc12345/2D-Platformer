@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=4 uid="uid://b1j48wmuo13mr"]
+[gd_scene load_steps=7 format=4 uid="uid://b1j48wmuo13mr"]
 
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="1_014kd"]
 [ext_resource type="Texture2D" uid="uid://daddmg1hkc27d" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_rus8k"]
 [ext_resource type="PackedScene" uid="uid://bycdqoj8doefv" path="res://scenes/player.tscn" id="3_5xbjy"]
+[ext_resource type="PackedScene" uid="uid://eyths1tg8jyi" path="res://scenes/enemy.tscn" id="4_5xbjy"]
+[ext_resource type="PackedScene" uid="uid://ju24emxsiasv" path="res://scenes/coin.tscn" id="5_4nkto"]
+[ext_resource type="PackedScene" uid="uid://k38ssydd8jdk" path="res://scenes/endflag.tscn" id="6_fcfvj"]
 
 [node name="main" type="Node2D"]
 position = Vector2(14, -9)
 
 [node name="Backgroundsprite" type="Sprite2D" parent="."]
-position = Vector2(1508.5, 184.50002)
+position = Vector2(1513.0001, 185)
 scale = Vector2(1.4697264, 0.96972656)
 texture = ExtResource("1_rus8k")
 
@@ -18,4 +21,37 @@ tile_map_data = PackedByteArray("AAAuAAEAAAABAAAAAAAvAAEAAAABAAAAAAAwAAEAAAABAAA
 tile_set = ExtResource("1_014kd")
 
 [node name="player" parent="." instance=ExtResource("3_5xbjy")]
-position = Vector2(927, -6)
+position = Vector2(925, -4)
+
+[node name="coins" type="Node" parent="."]
+
+[node name="coin" parent="coins" instance=ExtResource("5_4nkto")]
+position = Vector2(16, -9)
+
+[node name="coin2" parent="coins" instance=ExtResource("5_4nkto")]
+position = Vector2(166, 42)
+
+[node name="coin3" parent="coins" instance=ExtResource("5_4nkto")]
+position = Vector2(359, 112)
+
+[node name="coin4" parent="coins" instance=ExtResource("5_4nkto")]
+position = Vector2(503, 112)
+
+[node name="enemies" type="Node" parent="."]
+
+[node name="enemy" parent="enemies" instance=ExtResource("4_5xbjy")]
+position = Vector2(939, -13)
+
+[node name="enemy2" parent="enemies" instance=ExtResource("4_5xbjy")]
+position = Vector2(1146, 59)
+
+[node name="enemy3" parent="enemies" instance=ExtResource("4_5xbjy")]
+position = Vector2(1297, 81)
+
+[node name="enemy4" parent="enemies" instance=ExtResource("4_5xbjy")]
+position = Vector2(1518, 61)
+move_speed = 30.0
+
+[node name="endflag" parent="." instance=ExtResource("6_fcfvj")]
+position = Vector2(748, 95)
+scene_to_load = null
