@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba2bdev3y1o0i"]
+
+[ext_resource type="Script" uid="uid://dm6pgn1uis713" path="res://scripts/menu.gd" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://daddmg1hkc27d" path="res://Sprites/Backgrounds/backgroundForest.png" id="2_con2f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mhnvy"]
+font_size = 48
+font_color = Color(1, 1, 0.3254902, 1)
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vjb58")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_con2f")
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.5
+offset_top = -24.5
+offset_right = 77.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "2d platformer game
+"
+label_settings = SubResource("LabelSettings_mhnvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="playbutton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49100003
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.535
+offset_left = -63.63202
+offset_top = 12.0
+offset_right = 51.0
+offset_bottom = 58.319977
+grow_horizontal = 2
+grow_vertical = 2
+text = "play"
+
+[node name="quitbutton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49100003
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.535
+offset_left = -63.63202
+offset_top = 85.0
+offset_right = 55.0
+offset_bottom = 142.31998
+grow_horizontal = 2
+grow_vertical = 2
+text = "quit
+"
+
+[connection signal="pressed" from="playbutton" to="." method="_on_playbutton_pressed"]
+[connection signal="pressed" from="quitbutton" to="." method="_on_quitbutton_pressed"]
